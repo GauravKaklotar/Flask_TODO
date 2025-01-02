@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Todo App{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Todo List</h1>
+<table class="table table-hover table-bordered table-dark rounded">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Completed</th>
+            <th>Due Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for todo in todos %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.description }}</td>
+            <td>
+                <span class="badge bg-{{ 'success' if todo.completed else 'danger' }}">
+                    {{ 'Yes' if todo.completed else 'No' }}
+                </span>
+            </td>
+            <td>{{ todo.due_date if todo.due_date else "Not Set" }}</td>
+            <td>
+                <a href="/edit/{{ todo.id }}" class="btn btn-sm btn-primary">Edit</a>
+                <a 
+                    href="/delete/{{ todo.id }}" 
+                    class="btn btn-sm btn-danger" 
+                    onclick="return confirm('Are you sure you want to delete this todo?');"
+                >Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

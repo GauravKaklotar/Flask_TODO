@@ -1,0 +1,59 @@
+:root {
+    --primary-color: #1c1c1c;  /* Dark Gray */
+    --secondary-color: #222;   /* Slightly Lighter Gray */
+    --gradient-start: #2e3b4e; /* Darker base color */
+    --gradient-end: #1e2a38;   /* Lighter gradient color */
+}
+
+body {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 960px;
+    background: rgba(0, 0, 0, 0.7); /* Slightly transparent dark background for content */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Form input styles */
+.form-control {
+    background-color: #333;
+    border: 1px solid #444;
+    color: white;
+}
+
+.form-control:focus {
+    background-color: #444;
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+/* Button Customizations */
+.btn-primary {
+    background-color: #1f4068;
+    border-color: #1f4068;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.btn-secondary {
+    background-color: #555;
+    border-color: #555;
+}
+
+h1, h2, h3 {
+    color: #e5e5e5; /* Light gray for headers */
+}
